@@ -30,8 +30,8 @@ add_executable(
 target_link_libraries(
         Calculator_test
         CalcLib
-        GTest::gtest_main
-        # GMock::gmock_main
+        gtest_main
+        gmock_main
 )
 
 gtest_discover_tests(Calculator_test)
