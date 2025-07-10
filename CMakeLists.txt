@@ -10,3 +10,28 @@ add_library(CalcLib
         IHistory.h
         InMemoryHistory.h InMemoryHistory.cpp
 )
+
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/refs/tags/v1.17.0.zip
+)
+
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+include(GoogleTest)
+
+add_executable(
+        Calculator_test
+        CalculatorTest.cpp
+)
+
+target_link_libraries(
+        Calculator_test
+        CalcLib
+        GTest::gtest_main
+        # GMock::gmock_main
+)
+
+gtest_discover_tests(Calculator_test)
