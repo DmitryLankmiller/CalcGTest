@@ -1,7 +1,7 @@
 // (C) PROTEI protei.com
 
 #include "SimpleCalculator.h"
-#include "IHistory.h"
+#include "history/IHistory.h"
 
 #include <sstream>
 
@@ -41,6 +41,7 @@ int SimpleCalculator::Multiply(int a, int b)
 
 int SimpleCalculator::Divide(int a, int b)
 {
+    if (b == 0) throw std::invalid_argument("Division by zero!");
     int result = a / b;
     LogOperation(a, "/", b, result);
     return result;

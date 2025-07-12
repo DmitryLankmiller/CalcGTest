@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IHistory.h"
+#include "history/IHistory.h"
 #include <gmock/gmock.h>
 #include <string>
 #include <vector>
